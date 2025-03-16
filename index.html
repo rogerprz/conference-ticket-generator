@@ -22,36 +22,41 @@
   </section>
   <form>
     <fieldset>
-      <label for="upload-avatar"> Upload Avatar</label>
-      <div class="avatar">
-        <input type="image" id="upload-avatar" alt="Upload Avatar image" src="./assets/images/icon-upload.svg">
-        <div class="sub-text">Drag and drop or click to upload</div>
-      </div>
-
+      <legend>Upload Your Avatar</legend>
+      <label for="upload-avatar" class="avatar" aria-label="Upload your avatar">
+        <input type="file" id="upload-avatar" accept="image/png, image/jpeg" hidden>
+        <div class="upload-box">
+          <img src="./assets/images/icon-upload.svg" alt="Upload Avatar image">
+          <div class="sub-text upload-text">Drag and drop or click to upload</div>
+        </div>
+      </label>
       <div class="sub-text">
-        <img id="icon-info" src="./assets//images/icon-info.svg" alt="info">
+        <img id="icon-info" src="./assets/images/icon-info.svg" alt="info">
         Upload your photo (JPG or PNG, max size: 500KB).
       </div>
     </fieldset>
 
-    <fieldset>
-      <label for="full-name">Full Name</label>
-      <input type="text" id="full-name" placeholder="e.g. John Doe" required>
+    <fieldset class="personal-info">
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" placeholder="e.g. John Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="github-username">GitHub Username</label>
+        <input type="text" id="github-username" placeholder="@yourusername" required>
+      </div>
     </fieldset>
-    <fieldset>
-      <label for="email">Email Address</label>
-      <input type="email" id="email" placeholder="example@email.com" required>
-    </fieldset>
-    <fieldset>
-      <label for="github-username">GitHub Username</label>
-      <input type="text" id="" github-username" placeholder="@yourusername
-      " required>
-    </fieldset>
-    <input type="submit" value="Generate My Ticket">
+
+    <button type="submit">Generate My Ticket</button>
 
   </form>
 
-  <!-- Form ends -->
 
   <!-- Generated tickets starts -->
 

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Inconsolata';
-  src: url('./assets//fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype');
+  src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype');
   font-weight: 100 900;
   font-stretch: 75% 125%;
 }
@@ -10,7 +10,7 @@ body {
     url('./assets/images/background-desktop.png') no-repeat center fixed;
   width: 100%;
   background-size: 80% auto, cover;
-  font-family: 'Incosolata', monospace;
+  font-family: 'Inconsolata', monospace;
 }
 
 section.header {
@@ -29,6 +29,7 @@ h1 {
   width: 55%;
   margin: 0 auto;
 }
+
 h4 {
   color: rgba(255, 255, 255, 0.576);
   text-align: center;
@@ -37,10 +38,9 @@ h4 {
 form {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  /* justify-content: center; */
+  margin: 0 auto 200px auto;
   align-items: center;
-  height: 100vh;
+  height: auto;
   width: 500px;
   column-gap: 30px;
 }
@@ -48,6 +48,12 @@ form {
 fieldset {
   border: none;
   width: 100%;
+}
+
+legend {
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
 }
 
 label {
@@ -73,7 +79,8 @@ input[type='email'] {
   padding-bottom: 10px;
 }
 
-input[type='submit'] {
+input[type='submit'],
+button[type='submit'] {
   background-color: rgb(214, 114, 97);
   color: rgb(0, 0, 0);
   width: 100%;
@@ -81,6 +88,11 @@ input[type='submit'] {
   border-radius: 5px;
   border: none;
   font-size: 1.2rem;
+  cursor: pointer;
+}
+
+button {
+  display: block;
 }
 
 .attribution {
@@ -97,8 +109,7 @@ input[type='submit'] {
   color: rgb(255, 255, 255);
 }
 
-#info-icon {
-  /* center image */
+#icon-info {
   margin: 0 auto;
   width: 15px;
 }
@@ -107,13 +118,53 @@ input[type='submit'] {
   width: 100%;
   height: 250px;
   border: 2px dashed rgb(203, 203, 203);
+  margin-block: 10px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
-input[type='image'] {
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-box img {
+  width: 40px;
   height: 40px;
+}
+
+.upload-box .sub-text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.upload-text {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+}
+
+input[type='file'] {
+  display: none;
+}
+
+/* Styling for the form groups */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
 }
