@@ -1,0 +1,19 @@
+body {
+  background-image: url('./assets/images/background-desktop.png');
+  width: 100%;
+  background-size: cover;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+}
