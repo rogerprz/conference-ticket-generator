@@ -15,12 +15,14 @@
 </head>
 
 <body>
-  <section class="header">
-    <img style="margin: 0 auto;" src="./assets/images/logo-full.svg" alt="Coding conf logo">
-    <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
-    <h4>Secure your spot at next year's biggest coding conference.</h4>
+
+  <section class="header" id="header-section">
+    <img id="logo" style="margin: 0 auto; margin-bottom:60px;" src="./assets/images/logo-full.svg"
+      alt="Coding conf logo">
+    <h1 id="h1-header">Your Journey to Coding Conf 2025 Starts Here!</h1>
+    <h4 id="h4-sub-header">Secure your spot at next year's biggest coding conference.</h4>
   </section>
-  <form>
+  <form id="ticket-form">
     <fieldset>
       <legend>Upload Your Avatar</legend>
       <label for="upload-avatar" class="avatar" aria-label="Upload your avatar">
@@ -45,7 +47,7 @@
       <div class="form-group">
         <label for="email">Email Address</label>
         <input type="email" id="email" placeholder="example@email.com" required>
-      </div>
+      </div>`
 
       <div class="form-group">
         <label for="github-username">GitHub Username</label>
@@ -53,26 +55,21 @@
       </div>
     </fieldset>
 
-    <button type="submit">Generate My Ticket</button>
-
+    <button type="submit" id="generate-ticket-button">Generate My Ticket</button>
   </form>
 
 
   <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
+  <section id="ticket-section" style="display:none;">
+  </section>
 
   <!-- Generated tickets ends -->
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Roger Perez</a>.
   </div>
 </body>
+<script src="index.js"></script>
 
 </html>
