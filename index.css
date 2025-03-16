@@ -173,6 +173,13 @@ input[type='file'] {
   font-size: 1rem;
 }
 
+.ticket-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .ticket-info {
   color: rgb(255, 255, 255);
 }

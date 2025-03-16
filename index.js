@@ -18,17 +18,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const dateOneMonthFromNow = new Date();
     dateOneMonthFromNow.setMonth(dateOneMonthFromNow.getMonth() + 1);
+    const normalizeDate = (date) => {
+      const options = {
+        month: 'long',
+        day: '2-digit',
+        year: 'numeric'
+      };
+      return date.toLocaleDateString('en-US', options);
+    };
     const header = document.getElementById('h1-header');
     const subHeader = document.getElementById('h4-sub-header');
     const ticket = document.getElementById('ticket-section');
-    header.innerHTML =
-      ticket.innerHTML = `Congrats, <span style="background: linear-gradient(to right, orange, white); -webkit-background-clip: text; color: transparent;">${nameValue}</span>! Your ticket is ready.`;
-    subHeader.innerHTML = `We've emailed your ticket to ${emailValue} and will send updates in the run up to the event.`;
+    header.innerHTML = ticket.innerHTML = `
+      <div>Congrats, <span style="background: linear-gradient(to right, rgb(214, 114, 97), white); -webkit-background-clip: text; color: transparent;">${nameValue}</span>!</div>
+      <div> Your ticket is ready.</div>`;
+    subHeader.innerHTML = `We've emailed your ticket to <span style="background: linear-gradient(to right, rgb(214, 114, 97), white); -webkit-background-clip: text; color: transparent;">${emailValue}</span> and will send updates in the run up to the event.`;
 
     ticket.innerHTML = `
       <div>
         <img src="./assets/images/logo-full.svg" alt="Coding conf logo" />
-        <div class="ticket-info">${dateOneMonthFromNow} / Seattle, WA</div>
+        <div class="ticket-info">${normalizeDate(dateOneMonthFromNow)} / Seattle, WA</div>
       </div>
       <div>
         <h2 class="ticket-info">${nameValue}</h2>
@@ -38,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const formSection = document.getElementById('ticket-form');
     formSection.style.display = 'none';
-    ticket.style.display = 'block';
+    ticket.style.display = 'flex';
+    ticket.classList.add('ticket-section');
   });
 });
