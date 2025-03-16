@@ -1,7 +1,86 @@
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('./assets//fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+}
+
 body {
-  background-image: url('./assets/images/background-desktop.png');
+  background: url('./assets/images/pattern-squiggly-line-bottom-desktop.svg') no-repeat bottom left fixed,
+    url('./assets/images/background-desktop.png') no-repeat center fixed;
   width: 100%;
-  background-size: cover;
+  background-size: 80% auto, cover;
+  font-family: 'Incosolata', monospace;
+}
+
+section.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  column-gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 2.1rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 55%;
+  margin: 0 auto;
+}
+h4 {
+  color: rgba(255, 255, 255, 0.576);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  width: 500px;
+  column-gap: 30px;
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+}
+
+label {
+  font-size: 1.1rem;
+  color: rgb(255, 255, 255);
+}
+
+input {
+  text-indent: 10px;
+  margin-top: 10px;
+}
+
+input[type='text'],
+input[type='email'] {
+  width: 100%;
+  height: 30px;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid rgb(203, 203, 203);
+  font-size: 1.1rem;
+  color: rgb(244, 238, 238);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+input[type='submit'] {
+  background-color: rgb(214, 114, 97);
+  color: rgb(0, 0, 0);
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
 }
 
 .attribution {
@@ -13,7 +92,28 @@ body {
   color: hsl(228, 45%, 44%);
 }
 
-h1 {
-  font-size: 2.5rem;
+.sub-text {
+  font-size: 0.75rem;
   color: rgb(255, 255, 255);
+}
+
+#info-icon {
+  /* center image */
+  margin: 0 auto;
+  width: 15px;
+}
+
+.avatar {
+  width: 100%;
+  height: 250px;
+  border: 2px dashed rgb(203, 203, 203);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type='image'] {
+  height: 40px;
 }
