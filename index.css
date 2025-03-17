@@ -7,9 +7,10 @@
 
 body {
   background: url('./assets/images/pattern-squiggly-line-bottom-desktop.svg') no-repeat bottom left fixed,
+    url('./assets/images/pattern-squiggly-line-top.svg') no-repeat top right fixed,
     url('./assets/images/background-desktop.png') no-repeat center fixed;
   width: 100%;
-  background-size: 60% auto, cover;
+  background-size: 60% auto, 40% auto, cover;
   font-family: 'Inconsolata', monospace;
 }
 img#logo {
