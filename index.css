@@ -174,11 +174,28 @@ input[type='file'] {
   font-size: 1rem;
 }
 
-.ticket-section {
+.ticket-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   margin-top: 20px;
+  background-image: url('./assets/images/pattern-ticket.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+  row-gap: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  border-left: 1px solid rgb(207, 182, 177);
+  border-right: 1px solid rgb(213, 124, 106);
+}
+
+.ticket-header {
+  display: flex;
+  flex-direction: column;
 }
 
 .ticket-info {

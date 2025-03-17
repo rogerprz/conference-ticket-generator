@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const button = document.getElementById('generate-ticket-button');
-  console.log('BBB:', button);
+
+  let avatarImage = null;
   button.addEventListener('click', function (event) {
     event.preventDefault();
     const name = document.getElementById('full-name');
@@ -10,33 +11,39 @@ document.addEventListener('DOMContentLoaded', function () {
     const nameValue = name.value;
     const usernameValue = username.value;
     const emailValue = email.value;
-    const avatarValue = avatar.value;
-    const avatarFile = avatar.files[0];
+    // const avatarValue = avatar.value;
+    // const avatarFile = avatar.files[0];
     console.log(nameValue);
     console.log(usernameValue);
-    console.log(avatar, avatarFile, avatarValue);
+    console.log(avatar);
 
     const header = document.getElementById('h1-header');
     const subHeader = document.getElementById('h4-sub-header');
-    const ticket = document.getElementById('ticket-section');
+    const ticket = document.getElementById('ticket-container');
     header.innerHTML = congratsMessage(nameValue);
     subHeader.innerHTML = emailSentMessage(emailValue);
-
+    console.log('Avatar:', avatarImage);
+    avatarImage.style.width = '70px';
+    avatarImage.style.height = '70px';
     ticket.innerHTML = `
-      <div>
-        <img src="./assets/images/logo-full.svg" alt="Coding conf logo" />
+
+      <div class="ticket-header">
+        <img style="width: 200px; height: 50px;" src="./assets/images/logo-full.svg" alt="Coding conf logo" />
         <div class="ticket-info">${getDate()} / Seattle, WA</div>
       </div>
-      <div>
-        <h2 class="ticket-info">${nameValue}</h2>
-        <h3 class="ticket-info">${usernameValue}</h3>
+      <div style="display: flex; column-gap: 20px;">
+        ${avatarImage.outerHTML}
+        <div>
+          <div class="ticket-info">${nameValue}</div>
+          <div class="ticket-info">${usernameValue}</div>
+        </div>
       </div>
       `;
 
     const formSection = document.getElementById('ticket-form');
     formSection.style.display = 'none';
     ticket.style.display = 'flex';
-    ticket.classList.add('ticket-section');
+    ticket.classList.add('ticket-container');
   });
 
   const uploadAvatar = document.getElementById('upload-avatar');
@@ -49,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Reader result:', reader.result);
     reader.onload = function (e) {
       const div = document.createElement('div');
-      const img = document.createElement('img');
-      img.src = e.target.result;
-      img.id = 'avatar-image';
-      img.style.width = '100px';
-      img.style.height = '100px';
+      avatarImage = document.createElement('img');
+      avatarImage.src = e.target.result;
+      avatarImage.id = 'avatar-image';
+      avatarImage.style.width = '100px';
+      avatarImage.style.height = '100px';
       div.classList.add('avatar');
-      div.appendChild(img);
+      div.appendChild(avatarImage);
       uploadAvatar.parentNode.replaceWith(div);
     };
 
