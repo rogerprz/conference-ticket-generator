@@ -94,6 +94,10 @@ button[type='submit'] {
   font-size: 1.2rem;
   cursor: pointer;
 }
+button[type='submit']:hover,
+.upload-box:hover {
+  cursor: finger;
+}
 
 .attribution {
   font-size: 11px;
