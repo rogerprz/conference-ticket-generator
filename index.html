@@ -23,10 +23,10 @@
     <h4 id="h4-sub-header">Secure your spot at next year's biggest coding conference.</h4>
   </section>
   <form id="ticket-form">
-    <fieldset>
+    <fieldset class="input-fieldset">
       <legend>Upload Your Avatar</legend>
       <label for="upload-avatar" class="avatar" aria-label="Upload your avatar">
-        <input type="file" id="upload-avatar" accept="image/png, image/jpeg" hidden>
+        <input type="file" id="upload-avatar" accept="image/png, image/jpeg" hidden required>
         <div class="upload-box">
           <img src="./assets/images/icon-upload.svg" alt="Upload Avatar image">
           <div class="sub-text upload-text">Drag and drop or click to upload</div>
@@ -38,7 +38,7 @@
       </div>
     </fieldset>
 
-    <fieldset class="personal-info">
+    <fieldset class="input-fieldset">
       <div class="form-group">
         <label for="full-name">Full Name</label>
         <input type="text" id="full-name" placeholder="e.g. John Doe" required>
@@ -51,7 +51,7 @@
 
       <div class="form-group">
         <label for="github-username">GitHub Username</label>
-        <input type="text" id="github-username" placeholder="@yourusername" required>
+        <input type="text" id="github-username" placeholder="@username" required>
       </div>
     </fieldset>
 

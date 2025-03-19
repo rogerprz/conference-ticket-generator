@@ -1,7 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
   const button = document.getElementById('generate-ticket-button');
+  const uploadAvatar = document.getElementById('upload-avatar');
 
   let avatarImage = null;
+
+  uploadAvatar.addEventListener('change', function () {
+    if (uploadAvatar.files.length > 0) {
+      button.style.cursor = 'pointer';
+      button.style.backgroundColor = 'rgb(214, 114, 97)';
+      button.disabled = false;
+    }
+  });
+
+  button.disabled = true;
+  button.style.cursor = 'not-allowed';
+  button.style.backgroundColor = 'gray';
+
   button.addEventListener('click', function (event) {
     event.preventDefault();
     const name = document.getElementById('full-name');
@@ -45,8 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
     ticket.style.display = 'flex';
     ticket.classList.add('ticket-container');
   });
-
-  const uploadAvatar = document.getElementById('upload-avatar');
 
   uploadAvatar.addEventListener('change', function (event) {
     const file = event.target.files[0];
