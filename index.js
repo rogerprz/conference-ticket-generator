@@ -3,18 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const uploadAvatar = document.getElementById('upload-avatar');
   let avatarImage = null;
 
-  uploadAvatar.addEventListener('change', function () {
-    if (uploadAvatar.files.length > 0) {
-      genButton.style.cursor = 'pointer';
-      genButton.style.backgroundColor = 'rgb(214, 114, 97)';
-      genButton.disabled = false;
-    }
-  });
-
-  genButton.disabled = true;
-  genButton.style.cursor = 'not-allowed';
-  genButton.style.backgroundColor = 'gray';
-
   genButton.addEventListener('click', function (event) {
     event.preventDefault();
     const name = document.getElementById('full-name');
