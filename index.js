@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const reader = new FileReader();
     console.log('File:', file);
     console.log('Reader:', reader);
-    console.log('Reader result:', reader.result);
     reader.onload = function (e) {
       const div = document.createElement('div');
       div.classList.add('avatar');
